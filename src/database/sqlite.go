@@ -1,14 +1,18 @@
 package database
 
 import (
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
+	"fmt"
+
+	_ "github.com/mattn/go-sqlite3"
+	"xorm.io/xorm"
 )
 
-func NewSqlite() (*gorm.DB, error) {
-	db, err := gorm.Open(sqlite.Open("data/backup.db"), &gorm.Config{})
+func SqliteConnection() (*xorm.Engine, error) {
+	engine, err := xorm.NewEngine("sqlite3", "data/backup.db")
 	if err != nil {
+		fmt.Println("Error creating engine", err)
 		return nil, err
 	}
-	return db, nil
+	fmt.Println("connection to Sqlite3 successfully")
+	return engine, nil
 }

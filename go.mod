@@ -10,13 +10,15 @@ require (
 	github.com/go-ini/ini v1.62.0 // indirect
 	github.com/go-kit/kit v0.10.0
 	github.com/go-redis/redis/v8 v8.8.2
+	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gocarina/gocsv v0.0.0-20210326111627-0340a0229e98
 	github.com/gofrs/uuid v4.0.0+incompatible
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2
-	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.3.0
+	github.com/lib/pq v1.10.2
 	github.com/mattn/go-oci8 v0.1.1
+	github.com/mattn/go-sqlite3 v1.14.8
 	github.com/milvus-io/milvus-sdk-go v0.4.4
 	github.com/minio/minio-go v6.0.14+incompatible
 	github.com/minio/minio-go/v7 v7.0.5
@@ -30,8 +32,5 @@ require (
 	google.golang.org/genproto v0.0.0-20210421164718-3947dc264843
 	google.golang.org/grpc v1.37.0
 	google.golang.org/protobuf v1.26.0
-	gorm.io/driver/mysql v1.0.1
-	gorm.io/driver/sqlite v1.1.4
-	gorm.io/gorm v1.21.6
 	xorm.io/xorm v1.2.2
 )

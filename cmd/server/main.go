@@ -11,7 +11,6 @@ import (
 	"github.com/go-kit/kit/log"
 
 	"go-oracle/config"
-	"go-oracle/src/database"
 	"go-oracle/src/endpoints"
 	serviceHttp "go-oracle/src/http"
 	"go-oracle/src/service"
@@ -50,19 +49,6 @@ func main() {
 	// 	panic(err)
 	// }
 
-	db, err := database.OracleConnection("username/password@localhost:9090/DBNAME")
-	if err != nil {
-		fmt.Println("OracleConnection", err)
-	}
-	type RuleConfig struct {
-		Code string
-	}
-	var rules = RuleConfig{}
-	cc, err := db.Table("RULE_CONFIG").Count(&rules)
-	if err != nil {
-		fmt.Println("RuleConfig", err)
-	}
-	fmt.Println(cc)
 	var s service.Service
 	var h http.Handler
 
